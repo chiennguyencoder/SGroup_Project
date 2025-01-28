@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Launch Page - Creative Landing Page Template</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="navbar-brand">LaunchPage</a>
+                <ul class="navbar__menuList">
+                    <li class="navbar__menuItem active Home-nav"><a href="#Home">Home</a></li>
+                    <li class="navbar__menuItem About-nav"><a href="#About">About</a></li>
+                    <li class="navbar__menuItem Testimonials-nav"><a href="#Testimonials">Testimonials</a></li>
+                    <li class="navbar__menuItem Work-nav"><a href="#Work">Work</a></li>
+                    <li class="navbar__menuItem Team-nav"><a href="#Team">Team</a></li>
+                    <li class="navbar__menuItem Features-nav"><a href="#Features">Features</a></li>
+                    <li class="navbar__menuItem Pricing-nav"><a href="#Pricing">Pricing</a></li>
+                    <li class="navbar__discoverLink"><a href="#Contact">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- HOME SECTION -->
+    <section class="home-section" id="Home">
+    <div class="home-section__overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col col-half home-section__col1">
+                <h1>Award-Winning Agency Based In Manchested</h1>
+                <p class="desc">Excepteur sint occaecat cupidatat nonet proident, vante nisn culpa qui officia deserunt etimus quis autem nets lorem entimus velis netsad.</p>
+                <div class="video-popup">
+                    <div class="video-popup__playbtn">
+                        <i class="fa-solid fa-play"> </i></div>
+                    <p class="video-popup__text">Watch Presentation Video</p>
+                </div>
+            </div>
+            <div class="col col-half">
+                <div class="home-section__register">
+                    <h3>Get Your Free 14-Day Trial</h3>
+                    <p>Velis demo enim quia tempor magnet.</p>
+                    <div class="home-section__formWrapper">
+                        <form action="php/register.php" id="register-form">
+                            <input type="text" name="register_names" class="register-input name-input" required = "" placeholder="Company Name*">
+                            <input class="register-input name-email" required="" name="register_email" placeholder="Email Adress*" type="email">
+                            <select class="register-input white-input" required="" name="register_ticket">
+                                <option value="">We need LaunchPage for...</option>
+                                <option value="Individual">Our Support Team</option>
+                                <option value="Professional">Our Sales Department</option>
+                            </select>
+                            <input value="START MY FREE 14-DAY TRIAL" class="register-submit" type="submit">
+
+                        </form>
+                        <p class="register-form-terms">No Credit Card • No Installation Required</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="partners-section bg-w">
+        <div class="container">
+            <ul class="partner-list">
+                <li class="partner-title">
+                    <h3>As featured in:</h3>
+                </li>
+                <li class="partner"><img src="./assets/img/award4a.png" alt="partner"></li>
+                <li class="partner"><img src="./assets/img/award5.png" alt="partner"></li>
+                <li class="partner"><img src="./assets/img/award3a.png" alt="partner"></li>
+                <li class="partner"><img src="./assets/img/award1a.png" alt="partner"></li>
+            </ul>
+    </div>
+    </section>
+
+    <section class="section-bg bg-g" id="About">
+    <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <p class="section-subtitle">Dicover how our amazing team can help your business.</p>
+        <div class="row service-list">
+            <div class="col-third blue service-item">  
+                <i class="fa-solid fa-chart-column"></i>
+                <h4>Google Analitycs</h4>
+                <p>Curabitur quam etsum lacus net netsum nulat iaculis etsimun vitae etsum nisle varius netsum.
+
+                </p>
+            </div>
+            <div class="col-third red service-item">
+                <i class="far fa-heart"></i>
+                <h4>Brand Awareness</h4>
+                <p>Curabitur quam etsum lacus net netsum nulat iaculis etsimun vitae etsum nisle varius netsum.</p>
+            </div>
+            <div class="col-third green service-item">
+                <i class="fas fa-anchor"></i>
+                <h4>Graphic Design</h4>
+                <p>Curabitur quam etsum lacus net netsum nulat iaculis etsimun vitae etsum nisle varius netsum.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-bg bg-w business-section">
+    <div class="container">
+        <div class="row align-item__center">
+            <div class="col-half pad-rl15" style="margin-right: 30px;">
+                <img src="assets/img/about001.webp" alt="pic" class="img-box">
+            </div>
+            <div class="col-half business-content">
+                <h3 >Discover how we can help you to grow your business fast.</h3>
+                <p>Velis demo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, seditum netis velas matrix net nesciunt.</p>
+                <ul class="benefits">
+                    <li><i class="fa fa-check"></i> Quias netus magni netsum eos qui ratione sequi.</li>
+                    <li><i class="fa fa-check"></i> Venis ratione sequi netus enim quia tempor magni.</li>
+                    <li><i class="fa fa-check"></i> Enim ipsam netus voluptatem quia voluptas.</li>
+                </ul>
+                <button class="benefit-btn">Discover More</button>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-bg bg-g">
+    <div class="container">
+        <div class="row">
+            <div class="col-half">
+                <ul class="workflow-list">
+                    <li class="workflow-item active">
+                        <div class="workflow-icon text-blue">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="workflow-content">
+                            <h4>Customize your workflow.</h4>
+                            <p>Manage any process and be ready to address any challenge with total ease.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-item">
+                        <div class="workflow-icon text-red">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="workflow-content">
+                            <h4>Easy onboarding, fast adoption.</h4>
+                            <p>With Square getting your team on board is as simple as sending an email.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-item">
+                        <div class="workflow-icon text-green">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="workflow-content">
+                            <h4>Improve subscriber retention.</h4>
+                            <p>Analyze customers by region, discounts and more and put a plan in place.</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-half pad-rl15" style="margin-left: 30px;">
+                <img src="assets/img/about2.webp" alt="pic" class="img-box mar">
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="section-bg bg-fixed fact-section">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <h2 class="fact-title">Fun Facts About Our Agency</h2>
+        <ul class="fact-list">
+            <li class="fact-item">
+                <i class="far fa-gem"></i>
+                <p class="fact-number">1050+</p>
+                <p class="fact-field">Projects Completed</p>
+            </li>
+            <li class="fact-item">
+                <i class="fa-regular fa-heart"></i>
+                <p class="fact-number">217k</p>
+                <p class="fact-field">Happy Clients</p>
+                
+            </li>
+            <li class="fact-item">
+                <i class="fa-solid fa-award"></i>
+                <p class="fact-number">1210</p>
+                <p class="fact-field">Design Awards</p>
+            </li>
+            <li class="fact-item">
+                <i class="fa-solid fa-anchor"></i>
+                <p class="fact-number">2137</p>
+                <p class="fact-field">Line Of Codes</p>
+            </li>
+            
+        </ul>
+    </div>
+    </section>
+    <section class="section-bg bg-g testi-section" id = "Testimonials">
+    <div class="container">
+        <div class="row first align-item__center ">
+            <div class="col-half first">
+                <h2 class="testi-title">What People Are Saying.</h2>
+                <p class="testi-desc">Quis autem velis ets reprehender net etid quiste nets voluptate. Utise wisi enim minim veniam, quis etsad aspernatis netsum stationes nets.</p>
+                <div class="row second">
+                    <div class="col-third border">
+                        <h3>TrustPilot</h3>
+                        <div class="testi-rating first">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                    <div class="col-third pad-l30">
+                        <h3>Feefo</h3>
+                        <div class="testi-rating second">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-half second">
+                <div class="testi-card active">
+                    <div class="testi-card__quote ">
+                        <p>
+                            Nemo enim ipsam voluptatem quia voluptas situm ets aspernatis netsum loris fugit, sed quia magni dolores eos quis ratione sequi etum nets vesciunt neque.
+                        </p>    
+                    </div>
+                    <div class="testi-card__info">
+                        <img src="./assets/img/testimonials3.webp" alt="test3">
+                        <p>Alexandra Smith / <span>Manager - SmartCoders</span></p>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-card__quote">
+                        <p>
+                            Nemo enim ipsam voluptatem quia voluptas situm ets aspernatis netsum loris fugit, sed quia magni dolores eos quis ratione sequi etum nets vesciunt neque.
+                        </p>    
+                    </div>
+                    <div class="testi-card__info">
+                        <img src="./assets/img/testimonials2.webp" alt="test3">
+                        <p>John Doe / <span>CEO - Epic Design</span></p>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-card__quote">
+                        <p>
+                            Nemo enim ipsam voluptatem quia voluptas situm ets aspernatis netsum loris fugit, sed quia magni dolores eos quis ratione sequi etum nets vesciunt neque.
+                        </p>    
+                    </div>
+                    <div class="testi-card__info">
+                        <img src="./assets/img/testimonials1.webp" alt="test3">
+                        <p>Christina Pages / <span>Designer - New Fashion</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="section-bg bg-w portfolio-section" id="Work">
+    <div class="container">
+        <h2 class="section-title">
+            Our Portfolio
+        </h2>
+        <p class="section-subtitle">Dicover the latest projects accomplished for my clients.</p>
+        <ul class="row gallery-list">
+            <li class="col-third gallery-item">
+                
+                <div class="portfolio-picture">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
+                    </div>
+                    <img src="assets/img/gallery1.webp" alt="picture">
+                </div>
+                <div class="portfolio-picture">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
+                    </div>
+                    <img src="assets/img/gallery2.webp" alt="picture">
+                </div>
+
+            </li>
+            <li class="col-third gallery-item">
+                <div class="portfolio-picture">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
+                    </div>
+                    <img src="assets/img/gallery3.webp" alt="picture">
+                </div>
+
+            </li>
+            <li class="col-third gallery-item">
+                <div class="portfolio-picture">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
+                    </div>
+                    <img src="assets/img/gallery4.webp" alt="picture">
+                </div>
+                <div class="portfolio-picture">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
+                    </div>
+                    <img src="assets/img/gallery5.webp" alt="picture">
+                </div>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section class="section-bg bg-g team-section" id="Team">
+    <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">Discover more about our high performing team.</p>
+        <ul class="row team-list">
+            <li class="col-third team-member">
+                <img src="assets/img/team001.webp" class="team-picture" alt="pic" >
+                <div class="member-info">
+                    <h3 class="member-name">CHRISTINA HAWKINS</h3>
+                    <div class="member-position">
+                        <p>Head of SEO</p>
+                    </div>
+                    <p class="member-desc">Johnathan is our co-founder and has developed search strategies for a variety of clients for over 5 years.</p>
+                </div>
+            </li>
+            <li class="col-third team-member">
+                <img src="assets/img/team002.webp" class="team-picture" alt="pic">
+                <div class="member-info">
+                    <h3 class="member-name">ANDRES JOHANSON</h3>
+                    <div class="member-position">
+                        <p>Marketing Manager</p>
+                    </div>
+                    <p class="member-desc">Andres fell in love with marketing at the school and looks forward to being part of the industry for years.</p>
+                </div>
+            </li>
+            <li class="col-third team-member">
+                <img src="assets/img/team003.webp" class="team-picture" alt="pic">
+                <div class="member-info">
+                    <h3 class="member-name">ALEXANDRA SMITHS</h3>
+                    <div class="member-position">
+                        <p>SEO Specialist</p>
+                    </div>
+                    <p class="member-desc">Graduating with a degree in Spanish, English and French, she has always loved writing.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section class="section-bg bg-fixed z-i1">
+    <div class="bg-overlay"></div>
+    <div class="container z-i2  text-center">
+        <div class="max-w58 margin-auto">
+            <h2 class="text-white">Award-Winning Agency</h2>
+            <p class="text-white">Utise wisi enim minim veniam, quis et stationes ullamcorper nets suscipit ets lobotis nisle consequat nihis etim aspernatur netsum.</p>
+            <button class="btn-white">Discover More</button>
+            <button href="" class="btn-white-border">Get In Touch</button>
+        </div>
+    </div>
+    </section>
+    <section class="section-bg bg-w feature-section" id="Features">
+    <div class="container">
+        <h2 class="section-title">Amazing Features</h2>
+        <p class="section-subtitle">Quis autem velis ets reprehender net etid quiste voluptate.</p>
+        <div class="row feature-list">
+            <div class="feature-item col-third">
+                <div class="feature-item__icon light-green"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <div class="feature-item__info">
+                    <h2 class="feature-item__title">Support 24/7</h2>
+                    <p class="feature-item__desc">Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
+                </div>
+            </div>
+            <div class="feature-item col-third">
+                <div class="feature-item__icon light-blue"><i class="fa-solid fa-users"></i></div>
+                <div class="feature-item__info">
+                    <h2 class="feature-item__title">User Friendly</h2>
+                    <p class="feature-item__desc">Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
+                </div>
+            </div>
+            <div class="feature-item col-third">
+                <div class="feature-item__icon orange"><i class="fa-regular fa-bell"></i></div>
+                <div class="feature-item__info">
+                    <h2 class="feature-item__title">Notifications</h2>
+                    <p class="feature-item__desc">Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row feature-list">
+            <div class="feature-item col-third">
+                <div class="feature-item__icon dark-blue"><i class="fa-solid fa-gift"></i></div>
+                <div class="feature-item__info">
+                    <h2 class="feature-item__title">Accessbility</h2>
+                    <p class="feature-item__desc">Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
+                </div>
+            </div>
+            <div class="feature-item col-third">
+                <div class="feature-item__icon light-red"><i class="fa-solid fa-piggy-bank"></i></div>
+                <div class="feature-item__info">
+                    <h2 class="feature-item__title">Cost Control</h2>
+                    <p class="feature-item__desc">Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
+                </div>
+            </div>
+            <div class="feature-item col-third">
+                <div class="feature-item__icon dark-green"><i class="fa-regular fa-comments"></i></div>
+                <div class="feature-item__info">
+                    <h2 class="feature-item__title">Chat With Friends</h2>
+                    <p class="feature-item__desc">Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-bg bg-g price-section" id="Pricing">
+    <div class="container">
+        <div class="row align-item__center">
+            <div class="col-third price-content">
+                <h3 class="price-title">Great pricing plans tailored to your needs.</h3>
+                <p class="price-desc">Quis autem velis ets reprehender net etid quiste voluptate. Utise wisi enim minim veniam, quis et stationes nets.</p>
+            </div>
+            <div class="col-third price-monthly">
+                <ul class="price-list">
+                    <li class="price-title">MONTHLY</li>
+                    <li class="price-cost">$19</li>
+                    <li class="price-subtitle">Per Month</li>
+                    <li class="price-btn">
+                        <button>GET STARTED</button>
+                    </li>
+                    <li class="price-desc">First two weeks free.</li>
+                    <li class="price-desc">Amazing freatures.</li>
+                </ul>
+            </div>
+            <div class="col-third price-annualy">
+                <ul class="price-list">
+                    <li class="price-title">ANNUALY</li>
+                    <li class="price-cost">$29</li>
+                    <li class="price-subtitle">Per Year</li>
+                    <li class="price-btn">
+                        <button>GET STARTED</button>
+                    </li>
+                    <li class="price-desc">First two weeks free.</li>
+                    <li class="price-desc">Save 45% with this plan</li>
+                    <li class="price-desc">Amazing freatures.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="section-bg bg-w faq-section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Quis autem velis ets reprehender net etid quiste voluptate.</p>
+        <div class="row faq">
+            <div class="col-half">
+                <h5>Velit ut tortizi pretium viverra suspendisse?</h5>
+                <p>Utise wisi enim minim veniam, quis et stationes ullamcorper nets suscipit ets lobotis nisle consequat nihis etim. Quis autem velis ets reprehender net etid quiste voluptate velite esse sedis.</p>
+            </div>
+            <div class="col-half">
+                <h5>Nibh sit amet aliquam commodo?</h5>
+                <p>Utise wisi enim minim veniam, quis et stationes ullamcorper nets suscipit ets lobotis nisle consequat nihis etim. Quis autem velis ets reprehender net etid quiste voluptate velite esse sedis.</p>
+            </div>
+        </div>
+        <div class="row faq">
+            <div class="col-half">
+                <h5>Maecenas volutpat blandit etiam?</h5>
+                <p>Utise wisi enim minim veniam, quis et stationes ullamcorper nets suscipit ets lobotis nisle consequat nihis etim. Quis autem velis ets reprehender net etid quiste voluptate velite esse sedis.</p>
+            </div>
+            <div class="col-half">
+                <h5>Elementum curabitur vitae?</h5>
+                <p>Utise wisi enim minim veniam, quis et stationes ullamcorper nets suscipit ets lobotis nisle consequat nihis etim. Quis autem velis ets reprehender net etid quiste voluptate velite esse sedis.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-bg bg-fixed contact-section" id="Contact">
+    <div class="bg-overlay z-i1"></div>
+    <div class="container z-i2">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-subtitle">Have any queries? Get in touch today.</p>
+        <form action="" class="contact-form">
+            <div class="row">
+                <div class="col-half">
+                    <input type="text" name="name" class="contact-input" placeholder="Your Name*" required>
+                    <input type="text" name="phone" class="contact-input" required placeholder="Phone Number*" >
+                </div>
+                <div class="col-half">
+                    <input type="email" name="email" class="contact-input" required placeholder="Email Adress*" >
+                    <select name="contact-select" class="contact-input">
+                        <option value="">Choose Option</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Corporate">Corporate</option>
+                    </select>
+                </div>
+            </div>
+            <textarea name="message" class="contact-input message-input" placeholder="Your Message..." rows="4" cols="50"></textarea>
+            <input type="submit" value="GET IN TOUCH" class="contact-submit">
+        </form>
+    </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-third creator">
+                <p>© 2020 <b>LaunchPage</b>. Designed by <a href="https://themeforest.net/user/epic-themes/portfolio?ref=Epic-Themes" target="_blank">Epic-Themes</a></p>
+            </div>
+            <div class="col-third social">
+                <p>
+                    Follow us:
+                    <a href="#"><i class="fa-brands fa-twitter" style="color: #4099ff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-pinterest" style="color: #C92228;"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook" style="color: #3b5998;"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" style="color: #8a3ab9;"></i></a>
+                    <a href="#"><i class="fa-brands fa-skype" style="color: #1e90ff;"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    </footer>
+</body>
+<script src="assets/js/script.js"></script>
+</html>
+
+

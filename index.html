@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Active Navigation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .nav {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .nav div {
+      padding: 10px;
+      cursor: pointer;
+      margin-bottom: 5px;
+      background-color: lightgray;
+    }
+
+    .nav div.active {
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <div class="Home-nav">Nav for Home</div>
+    <div class="About-nav">Nav for About</div>
+    <div class="team-nav">Nav for Team</div>
+    <div class="feature-nav">Nav for Feature</div>
+  </div>
+
+  <!-- Sections -->
+  <section id="Home">Home</section>
+  <section id="About">About</section>
+  <section>Section 3 (no ID)</section>
+  <section>Section 4 (no ID)</section>
+  <section id="team">Team</section>
+  <section>Section 6 (no ID)</section>
+  <section id="feature">Feature</section>
+
+  <script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const sections = $$("section");
+    const navItems = $$("[class*='-nav']"); // Chọn tất cả các mục điều hướng
+
+    function onScroll() {
+      let activeSection = null;
+
+      // Duyệt qua tất cả các section
+      sections.forEach((section) => {
+        const pos = section.getBoundingClientRect();
+
+        // Kiểm tra nếu section có id và nằm trong vùng viewport
+        if (section.id && pos.top >= 0 && pos.top <= window.innerHeight / 2) {
+          activeSection = section; // Lưu lại section đang active
+        }
+      });
+
+      // Nếu tìm thấy section đang active
+      if (activeSection) {
+        // Xóa class 'active' ở tất cả các mục điều hướng
+        navItems.forEach((navItem) => navItem.classList.remove("active"));
+
+        // Thêm class 'active' cho mục điều hướng của section hiện tại
+        const navItem = $(`.${activeSection.id}-nav`);
+        if (navItem) navItem.classList.add("active");
+      }
+    }
+
+    // Lắng nghe sự kiện scroll
+    window.addEventListener("scroll", onScroll);
+
+    // Gọi hàm 1 lần khi trang load
+    onScroll();
+  </script>
+
+</body>
+</html>
