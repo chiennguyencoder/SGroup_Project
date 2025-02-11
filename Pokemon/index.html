@@ -4,25 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Pokemon | Chien Nguyen</title>
 </head>
 <body>
     <div id="app">
-        <div class="header">
+        <div id="header">
             <h1>Pokemon API</h1>
         </div>
-        <div class="search">
-            <input type="text" name="name" id="search" placeholder="Search some pokemon...">
+        <div id="search">
+            <input type="text" name="search" class="search-input" placeholder="Search some pokemon...">
         </div>
-        <div class="container">
+        <div class="pokemon-container">
+            <!-- <div class="poke-card">
+                <p class="poke-id">#1</p>
+                <div class="poke-img" style="background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png')"></div>
+                <h3 class="poke-name">Venusaur</h3>
+                <div class="poke-types">
+                    <div class="type dragon">grass</div>
+                    <div class="type steel">poison</div>
+                </div>
+            </div> -->
+            <!-- <div class="noFound">No pokemon matched with <b>"charrrr"</b></div> -->
+        </div>
+        <div class="text-center">
+            <button class="loadMoreButton">Load More</button>
+        </div>
+    </div>
 
+    <div id="detail-page">
+        <div class="detail-loading" style="display: none;">Get data from PokéDex...</div>
+        <div class="detail">
+            <!-- 
+            <button class="back-btn"> &lt; Back</button>
+            <div class="detail-container">
+                <div class="detail-img" style="background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png')"></div>
+                <div class="poke-types">
+                    <div class="type grass">grass</div>
+                    <div class="type poison">poison</div>
+                </div>
+                <h3 class="detail-name">Venusaur</h3>
+                <p class="poke-description">The plant blooms when it is absorbing solarenergy. It stays on the move to seek sunlight.</p>
+                <div class="poke-info">
+                    <div class="height">
+                        <div class="title">Height</div>
+                        <div class="text">20</div>
+                    </div>
+                    <div class="weight">
+                        <div class="title">Weight</div>
+                        <div class="text">1000</div>
+                    </div>
+                </div>
+                <div class="title">Abilities</div>
+                <div class="poke-info">
+                    <div class="text">Overgrow</div>
+                    <div class="text">Chlorophyll</div>
+                </div>
+                <div class="stats">
+                    <div class="title">Stats</div>
+                    <div class="stat-list">
+                        <div class="stat-item">
+                            <div class="stat-title hp">HP</div>
+                            <div class="stat-number">80</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-title atk">ATK</div>
+                            <div class="stat-number">82</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-title def">DEF</div>
+                            <div class="stat-number">83</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-title spa">SPA</div>
+                            <div class="stat-number">100</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-title spd">SPD</div>
+                            <div class="stat-number">100</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-title sPd">SPD</div>
+                            <div class="stat-number">80</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="evolutions">
+                    <div class="title">Evolution</div>
+                    <div class="evol-container">
+                        <div class="evol-item">
+                            <p class="evol-name">bulbasaur</p>
+                            <div class="evol-img" style="background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png');"></div>
+                        </div>
+                        <div class="bracket">&gt;</div>
+                        <div class="evol-item">
+                            <p class="evol-name">ivysaur</p>
+                            <div class="evol-img" style="background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png');"></div>
+                        </div>
+                        <div class="bracket">&gt;</div>
+                        <div class="evol-item">
+                            <p class="evol-name">venusaur</p>
+                            <div class="evol-img" style="background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png');"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            -->
         </div>
-        <button class="loadmore-btn">
-            Load More
-        </button>
     </div>
 </body>
 <script src="script.js"></script>
 </html>
-
 

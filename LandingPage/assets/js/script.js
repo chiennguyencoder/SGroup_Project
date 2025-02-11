@@ -1,6 +1,7 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
-
+const navBarButton = $('.navbar-btn')
+const navBarList = $('.navbar__menuList')
 
 function onScroll(){
     const sections = $$('section')
@@ -23,7 +24,108 @@ function onScroll(){
     }
 }
 
+function toggleNavBar(){
+    navBarList.classList.toggle('toggle')
+}
+
+
+function changeImage(){
+    const workflow_items = $$('.workflow-item')
+    const img = $('.workflow-img')
+    // console.log(workflow_item.getAttribute('imgUrl'));
+    
+    workflow_items.forEach((item) => {
+
+
+        item.addEventListener('click', (event) => {
+
+            if (!item.classList.contains('active')){
+                const imgUrl = item.getAttribute('imgUrl')
+                const active = $('.workflow-item.active')
+                active.classList.remove('active')
+                item.classList.add('active')
+                img.src = imgUrl
+            }
+        })
+    })
+}
+
+function toggleTestimonialsCard(){
+    const cards = $$('.testi-card')
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            const active = $('.testi-card.active')
+            if (card.classList.contains('active')){
+                card.classList.remove('active')
+            }
+            else{ 
+                if (active)
+                    active.classList.remove('active')
+                card.classList.add('active')
+            }
+        })
+    })
+}
+
+function slider(){
+    const gallery = $$('.portfolio-picture img')
+    const slider = $('.slider')
+    const slide = $('.slide')
+    let counter;
+    const counterElement = $('.counter')
+    const closeBtn = $('.close-btn') 
+    const nextBtn = $('.next-btn')
+    const prevBtn = $('.prev-btn')
+
+    function change(){
+        document.body.style.overflow = 'hidden'
+        slider.style.display = 'block'
+        slide.src = `assets/img/gallery${counter}.webp`
+        counterElement.innerText = `${counter} of 5`
+    }
+
+    function close(){
+        slider.style.display = 'none'
+        document.body.style.overflow = ''
+    }
+    gallery.forEach(picture => {
+        picture.addEventListener('click', (event) => {
+            event.stopPropagation();
+            counter = Number(picture.getAttribute('number'))
+            change();
+        })
+    })    
+
+    closeBtn.addEventListener('click' , (event) => {
+        event.stopPropagation();
+        close()
+    })
+    slider.addEventListener('click' , (event) => {
+        event.stopPropagation();
+        close()
+    })
+    nextBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        counter += (counter < 5) ? 1 : -4; 
+        change()
+    })
+
+    slide.addEventListener('click', (event) => {
+        event.stopPropagation();
+        counter += (counter < 5) ? 1 : -4; 
+        change()
+    })
+
+    prevBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        counter -= (counter > 1) ? 1 : -4;
+        change()
+    })
+}
+
+slider()
+changeImage()
+toggleTestimonialsCard()
+
 window.addEventListener("scroll", onScroll);
-
-
-onScroll()
+navBarButton.addEventListener('click', toggleNavBar)

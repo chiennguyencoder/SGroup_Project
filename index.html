@@ -1,101 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Active Navigation</title>
+  <title>Scroll Animation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      height: 100%;
     }
+
     section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      border-bottom: 1px solid #ccc;
+      min-height: 100vh;
+      padding: 20px;
+      background-color: #f4f4f4;
+      margin-bottom: 10px;
     }
 
-    .nav {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
+    h2, p {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.5s ease;
     }
 
-    .nav div {
-      padding: 10px;
-      cursor: pointer;
-      margin-bottom: 5px;
-      background-color: lightgray;
-    }
-
-    .nav div.active {
-      background-color: #4caf50;
-      color: white;
-      font-weight: bold;
+    h2.animate, p.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <div class="nav">
-    <div class="Home-nav">Nav for Home</div>
-    <div class="About-nav">Nav for About</div>
-    <div class="team-nav">Nav for Team</div>
-    <div class="feature-nav">Nav for Feature</div>
-  </div>
+  <section class="section" id="section1">
+    <h2 class="animate">Section 1</h2>
+    <p class="animate">Nội dung của section 1.</p>
+  </section>
 
-  <!-- Sections -->
-  <section id="Home">Home</section>
-  <section id="About">About</section>
-  <section>Section 3 (no ID)</section>
-  <section>Section 4 (no ID)</section>
-  <section id="team">Team</section>
-  <section>Section 6 (no ID)</section>
-  <section id="feature">Feature</section>
+  <section class="section" id="section2">
+    <h2 class="animate">Section 2</h2>
+    <p class="animate">Nội dung của section 2.</p>
+  </section>
+
+  <section class="section" id="section3">
+    <h2 class="animate">Section 3</h2>
+    <p class="animate">Nội dung của section 3.</p>
+  </section>
 
   <script>
-    const $ = document.querySelector.bind(document);
-    const $$ = document.querySelectorAll.bind(document);
+    // Hàm để kiểm tra và kích hoạt hiệu ứng khi phần tử vào viewport
+    function checkVisibility() {
+      const elements = document.querySelectorAll('.animate');
+      const windowHeight = window.innerHeight;
 
-    const sections = $$("section");
-    const navItems = $$("[class*='-nav']"); // Chọn tất cả các mục điều hướng
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
 
-    function onScroll() {
-      let activeSection = null;
-
-      // Duyệt qua tất cả các section
-      sections.forEach((section) => {
-        const pos = section.getBoundingClientRect();
-
-        // Kiểm tra nếu section có id và nằm trong vùng viewport
-        if (section.id && pos.top >= 0 && pos.top <= window.innerHeight / 2) {
-          activeSection = section; // Lưu lại section đang active
+        if (elementPosition < windowHeight * 0.8) {
+          element.classList.add('animate');
+        } else {
+          element.classList.remove('animate');
         }
       });
-
-      // Nếu tìm thấy section đang active
-      if (activeSection) {
-        // Xóa class 'active' ở tất cả các mục điều hướng
-        navItems.forEach((navItem) => navItem.classList.remove("active"));
-
-        // Thêm class 'active' cho mục điều hướng của section hiện tại
-        const navItem = $(`.${activeSection.id}-nav`);
-        if (navItem) navItem.classList.add("active");
-      }
     }
 
-    // Lắng nghe sự kiện scroll
-    window.addEventListener("scroll", onScroll);
+    // Lắng nghe sự kiện cuộn trang
+    window.addEventListener('scroll', checkVisibility);
 
-    // Gọi hàm 1 lần khi trang load
-    onScroll();
+    // Kiểm tra khi trang được tải lần đầu
+    checkVisibility();
   </script>
-
 </body>
 </html>

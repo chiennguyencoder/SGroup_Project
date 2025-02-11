@@ -9,15 +9,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Launch Page - Creative Landing Page Template</title>
+<!--    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <title>LaunchPage - Creative Landing Page Template</title>
 </head>
 <body>
+    
+    <div class="slider">
+        <div class="slider-container">
+            <div class="close-btn">×</div>
+            <!-- <div class="slide" style="background-image: url('./assets/img/gallery1.webp');"></div> -->
+            <img src="./assets/img/gallery1.webp" alt="pic" class="slide">
+            <div class="counter">1 of 5</div>
+        </div>
+        <div class="prev-btn"></div>
+        <div class="next-btn"></div>
+    </div>
 
     <!-- Header -->
     <div class="header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar align-item__center">
                 <a href="#" class="navbar-brand">LaunchPage</a>
+                <button class="navbar-btn"><i class="fa-solid fa-bars"></i></button>
                 <ul class="navbar__menuList">
                     <li class="navbar__menuItem active Home-nav"><a href="#Home">Home</a></li>
                     <li class="navbar__menuItem About-nav"><a href="#About">About</a></li>
@@ -112,8 +126,8 @@
     <section class="section-bg bg-w business-section">
     <div class="container">
         <div class="row align-item__center">
-            <div class="col-half pad-rl15" style="margin-right: 30px;">
-                <img src="assets/img/about001.webp" alt="pic" class="img-box">
+            <div class="col-half pad-r30 pad-l15">
+                <img src="assets/img/about001.webp" alt="pic" class="img-box" >
             </div>
             <div class="col-half business-content">
                 <h3 >Discover how we can help you to grow your business fast.</h3>
@@ -131,10 +145,10 @@
 
     <section class="section-bg bg-g">
     <div class="container">
-        <div class="row">
-            <div class="col-half">
+        <div class="row align-item__center">
+            <div class="col-half pad-r40">
                 <ul class="workflow-list">
-                    <li class="workflow-item active">
+                    <li class="workflow-item active" imgUrl = './assets/img/about2.webp'>
                         <div class="workflow-icon text-blue">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -143,7 +157,7 @@
                             <p>Manage any process and be ready to address any challenge with total ease.</p>
                         </div>
                     </li>
-                    <li class="workflow-item">
+                    <li class="workflow-item" imgUrl = './assets/img/about5.webp'>
                         <div class="workflow-icon text-red">
                             <i class="fas fa-network-wired"></i>
                         </div>
@@ -152,7 +166,7 @@
                             <p>With Square getting your team on board is as simple as sending an email.</p>
                         </div>
                     </li>
-                    <li class="workflow-item">
+                    <li class="workflow-item" imgUrl = './assets/img/about001.webp'>
                         <div class="workflow-icon text-green">
                             <i class="fas fa-rocket"></i>
                         </div>
@@ -164,8 +178,8 @@
 
                 </ul>
             </div>
-            <div class="col-half pad-rl15" style="margin-left: 30px;">
-                <img src="assets/img/about2.webp" alt="pic" class="img-box mar">
+            <div class="col-half pad-l30 pad-r15">
+                <img src="assets/img/about2.webp" alt="pic" class="img-box workflow-img" data-aos="fade-left" data-aos-once="true" data-aos-duration = '1000'>
             </div>
         </div>
     </div>
@@ -280,22 +294,13 @@
                     <div class="gallery-overlay">
                         <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
                     </div>
-                    <img src="assets/img/gallery1.webp" alt="picture">
+                    <img src="assets/img/gallery1.webp" alt="picture" number = '1'>
                 </div>
                 <div class="portfolio-picture">
                     <div class="gallery-overlay">
                         <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
                     </div>
-                    <img src="assets/img/gallery2.webp" alt="picture">
-                </div>
-
-            </li>
-            <li class="col-third gallery-item">
-                <div class="portfolio-picture">
-                    <div class="gallery-overlay">
-                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
-                    </div>
-                    <img src="assets/img/gallery3.webp" alt="picture">
+                    <img src="assets/img/gallery2.webp" alt="picture" number = '2'>
                 </div>
 
             </li>
@@ -304,13 +309,22 @@
                     <div class="gallery-overlay">
                         <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
                     </div>
-                    <img src="assets/img/gallery4.webp" alt="picture">
+                    <img src="assets/img/gallery3.webp" alt="picture" number = '3'>
+                </div>
+
+            </li>
+            <li class="col-third gallery-item">
+                <div class="portfolio-picture">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
+                    </div>
+                    <img src="assets/img/gallery4.webp" alt="picture" number = '4'>
                 </div>
                 <div class="portfolio-picture">
                     <div class="gallery-overlay">
                         <i class="fa fa-search-plus eye-icon" style="font-size: 38px;"></i>
                     </div>
-                    <img src="assets/img/gallery5.webp" alt="picture">
+                    <img src="assets/img/gallery5.webp" alt="picture" number = '5'>
                 </div>
             </li>
         </ul>
@@ -518,7 +532,7 @@
                     <a href="#"><i class="fa-brands fa-square-pinterest" style="color: #C92228;"></i></a>
                     <a href="#"><i class="fa-brands fa-square-facebook" style="color: #3b5998;"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram" style="color: #8a3ab9;"></i></a>
-                    <a href="#"><i class="fa-brands fa-skype" style="color: #1e90ff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-skype" style=""></i></a>
                 </p>
             </div>
         </div>
@@ -526,6 +540,10 @@
     </footer>
 </body>
 <script src="assets/js/script.js"></script>
+<!--<script src="https://unpkg.com/aos@next/dist/aos.js"></script>-->
+<!--  <script>-->
+<!--    AOS.init();-->
+<!--  </script>-->
 </html>
 
 

@@ -1,108 +1,130 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
+const MAX_POKEMON = 898
 
-const container = $('.container')
-const loadBtn = $('.loadmore-btn')
-const searchInput = $('#search')
+const btn = $('.loadMoreButton')
+const search_input = $('.search-input')
+const container = $('.pokemon-container')
 
-let currentIndex = 0
+let currentIndex = 0;
+let multi = 1;
 
-const getPokemon = async (url) => {
-    try {
-        const response = await fetch(url);
-        const data = await response.json()
-        return data
-    }
-    catch(error) {
-        console.log('Lỗi : ', error)
+async function createCard(pokemon_url){
+    const response = await fetch(pokemon_url)
+    const data = await response.json()
 
-    }
+    const name = data.name
+    const id = data.id
+    const img_href = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    const typesList = data.types
+
+    const div = document.createElement('div')
+    div.className = 'poke-card'
+    
+    div.innerHTML = `<p class="poke-id">#${id}</p>
+                <div class="poke-img" style="background-image: url('${img_href}')"></div>
+                <h3 class="poke-name">${name}</h3>`
+    
+    const typesDiv = document.createElement('div')
+    typesDiv.className = 'poke-types'
+
+    typesList.forEach( types => {
+        typesDiv.innerHTML += `<div class="type ${types.type.name}">${types.type.name}</div>`
+    })
+
+    div.appendChild(typesDiv)
+    return div
 }
 
+async function loadPokemon(allPokemons, start, end) {
+    console.log(`Load pokemon từ ${start} đến ${end}`)
 
+    const fragment = document.createDocumentFragment();
+    const cardPromises = []
+
+    for (let i = start; i <= end; i++){
+        cardPromises.push(createCard(allPokemons[i - 1].url))
+    }
+    currentIndex = end;
+    
+    const cards = await Promise.all(cardPromises)
+    cards.forEach((card) => {
+        fragment.appendChild(card)
+    })
+
+    container.appendChild(fragment)
+} 
+
+
+function loadMorePokemon(allPokemons){
+    function loadMoreHandle(){
+        const end = (currentIndex*2 <= MAX_POKEMON ? currentIndex*2 : currentIndex + (MAX_POKEMON - currentIndex))
+        loadPokemon(allPokemons, currentIndex + 1, end)
+    }
+
+    btn.addEventListener('click', loadMoreHandle)
+}
 
 function resetContainer(){
     container.innerHTML = ''
 }
 
-async function createCard(obj){
-    const response = await fetch(obj.url)
+function searchPokemon(allPokemons){
+    let timeOut;
+    async function searchHandle(){
+        clearTimeout(timeOut)
+
+        timeOut = setTimeout(async () => {
+            if (search_input.value === ''){
+                resetContainer()
+                loadPokemon(allPokemons, 1, currentIndex)
+                return
+            }
+    
+            let searchResults = []
+            searchResults = allPokemons.filter((pokemon) => {
+                return  (pokemon.name.includes(search_input.value))
+            })
+    
+            resetContainer()
+    
+            const fragment = document.createDocumentFragment()
+            let cardsPromises = []
+    
+            searchResults.forEach(pokemon => {
+                cardsPromises.push(createCard(pokemon.url))
+            })
+    
+            const cards = await Promise.all(cardsPromises)
+            // console.log(cards)
+            if (cards.length === 0){
+                console.log(`No pokemon matched with "${search_input.value}"`)
+                container.innerHTML = `<div class="noFound">No pokemon matched with <b>"${search_input.value}"</b></div>`
+                btn.style.display = 'none'
+            }
+            else {
+            cards.forEach(card => {
+                fragment.appendChild(card)
+            })
+            container.appendChild(fragment)
+            }
+    
+            
+        }, 200)
+        
+    }
+
+    search_input.addEventListener('input', searchHandle)
+}
+
+async function fetchApi(){
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${MAX_POKEMON}`)
     const data = await response.json()
-    
-    const div = document.createElement('div')
-    div.className = 'card'
-     
-    div.innerHTML = `<p>#${data.id}</p>
-    <h3>${data.name}</h3>
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png" alt="pic">`
-    
-    const types = document.createElement('div')
-    types.innerHTML = '<div class="labels"></div>'
-    data.types.forEach((value) => {
-        const type = document.createElement('div')
-        type.innerHTML = `<div class="label ${value.type.name}">${value.type.name}</div>`
-        types.appendChild(type)
-    }) 
-    div.appendChild(types)
-    container.appendChild(div)
 
-}
-function render(data ,start, end){
-    for (let i = start; i <= end; i++){
-        createCard(data.results[i])
-    }
+    const allPokemons = data.results
+    loadPokemon(allPokemons, 1, currentIndex + 36)
+    loadMorePokemon(allPokemons)
+    searchPokemon(allPokemons)
 }
 
-async function loadPokemon(){
-    const api = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898'
-    const data = await getPokemon(api)
-    console.log('Dữ liệu trả về : ', data);
-
-    render(data,currentIndex, currentIndex + 35)
-    currentIndex += 35
-    searchPokemon(data)
-
-    
-}
-
-function loadMorePokemon(){
-    loadBtn.addEventListener('click', debounce(loadPokemon(), 500))
-}
-
-function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-}
-
-// Tìm kiếm pokemon theo tên
-function searchPokemon(data){
-    function searchHandle(value){
-        if (searchInput.value == "") {
-            resetContainer()
-            render(data, 0, currentIndex)
-        }
-        else {
-            resetContainer()
-            const searchResults = data.results.filter((value) => {
-                return value.name.includes(searchInput.value)
-            })
-            searchResults.forEach((value) => {
-                createCard(value)
-            })
-        }
-    }
-
-    searchInput.addEventListener('input', debounce(searchHandle, 500))
-
-}
-
-
-function app(){
-    loadPokemon()
-    loadMorePokemon()
-}
-
-app()
+fetchApi()
