@@ -427,7 +427,7 @@ p {
     padding: 15px;
     font-size: 14px;
     border-radius: 3px;
-    transition: all 0.5 ease-in-out;
+    transition: all 0.5s;
     background: var(--primary);
     border: none;
     font-weight: 700;
@@ -435,7 +435,11 @@ p {
     margin-bottom: 15px;
     letter-spacing: 1px;
     cursor: pointer;
-    cursor: pointer
+}
+
+.register-submit:hover {
+    background : var(--green)
+
 }
 
 .register-form-terms {
