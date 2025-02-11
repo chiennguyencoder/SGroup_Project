@@ -11,7 +11,7 @@ html {
 #app {
     max-width: 1200px;
     margin: 50px auto 0 auto;
-    display: none;
+    /* display: none; */
 }
 
 #header h1 {
@@ -124,6 +124,7 @@ html {
 
 #detail-page {
     position: relative;
+    display: none;
 
 }
 

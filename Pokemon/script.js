@@ -5,6 +5,7 @@ const MAX_POKEMON = 898
 const btn = $('.loadMoreButton')
 const search_input = $('.search-input')
 const container = $('.pokemon-container')
+const app = $('#app')
 
 let currentIndex = 0;
 let multi = 1;
@@ -20,6 +21,7 @@ async function createCard(pokemon_url){
 
     const div = document.createElement('div')
     div.className = 'poke-card'
+    div.setAttribute('id-pokemon', id)
     
     div.innerHTML = `<p class="poke-id">#${id}</p>
                 <div class="poke-img" style="background-image: url('${img_href}')"></div>
@@ -36,6 +38,14 @@ async function createCard(pokemon_url){
     return div
 }
 
+// function clickCardHandle(){
+//     const pageDetail = $('#detail-page')
+//     const loadingText = $('.detail-loading')
+//     app.style.display = 'none'
+//     pageDetail.style.display = 'block'
+
+// }
+
 async function loadPokemon(allPokemons, start, end) {
     console.log(`Load pokemon từ ${start} đến ${end}`)
 
@@ -50,6 +60,7 @@ async function loadPokemon(allPokemons, start, end) {
     const cards = await Promise.all(cardPromises)
     cards.forEach((card) => {
         fragment.appendChild(card)
+        // card.addEventListener('click', clickCardHandle)
     })
 
     container.appendChild(fragment)
@@ -117,7 +128,7 @@ function searchPokemon(allPokemons){
     search_input.addEventListener('input', searchHandle)
 }
 
-async function fetchApi(){
+async function getData(){
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${MAX_POKEMON}`)
     const data = await response.json()
 
@@ -125,6 +136,8 @@ async function fetchApi(){
     loadPokemon(allPokemons, 1, currentIndex + 36)
     loadMorePokemon(allPokemons)
     searchPokemon(allPokemons)
+    // clickHandle()
 }
 
-fetchApi()
+
+getData()
