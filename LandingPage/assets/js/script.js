@@ -129,7 +129,7 @@ function animateOnScroll(){
     // console.log(animates);
     animates.forEach(animate => {
         animate.addEventListener('animationstart', () => {
-            // console.log(animate);
+            console.log(animate);
             animate.style.opacity = 1;
         })
 
