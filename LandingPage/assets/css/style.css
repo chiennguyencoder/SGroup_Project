@@ -1371,17 +1371,19 @@ textarea:focus {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* width: auto; */
+    width: auto;
     transform: translate(-50%, -50%);
     opacity: 1;
     margin-top: 50px;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 555px;
+
 }
 .slide {
     max-height: 650px;
     vertical-align: middle;
-    width: 100%;
+    /* width: 100%; */
+    margin: 0 auto;
 }
 
 .prev-btn {
@@ -1418,5 +1420,4 @@ textarea:focus {
 
 .prev-btn:active, .next-btn:active {
     transform: translateY(2px);
-
 }

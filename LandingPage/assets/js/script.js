@@ -123,9 +123,28 @@ function slider(){
     })
 }
 
+
+function animateOnScroll(){
+    const animates = $$('.animate')
+    // console.log(animates);
+    animates.forEach(animate => {
+        animate.addEventListener('animationstart', () => {
+            // console.log(animate);
+            animate.style.opacity = 1;
+        })
+
+        const rect = animate.getBoundingClientRect()
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 1.25){            // console.log(animate);
+            animate.classList.add('show')
+        }
+    })
+}
+
 slider()
 changeImage()
 toggleTestimonialsCard()
+window.addEventListener('scroll', animateOnScroll)
 
 window.addEventListener("scroll", onScroll);
 navBarButton.addEventListener('click', toggleNavBar)
+

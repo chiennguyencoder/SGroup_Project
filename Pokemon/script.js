@@ -38,14 +38,6 @@ async function createCard(pokemon_url){
     return div
 }
 
-// function clickCardHandle(){
-//     const pageDetail = $('#detail-page')
-//     const loadingText = $('.detail-loading')
-//     app.style.display = 'none'
-//     pageDetail.style.display = 'block'
-
-// }
-
 async function loadPokemon(allPokemons, start, end) {
     console.log(`Load pokemon từ ${start} đến ${end}`)
 
@@ -60,7 +52,6 @@ async function loadPokemon(allPokemons, start, end) {
     const cards = await Promise.all(cardPromises)
     cards.forEach((card) => {
         fragment.appendChild(card)
-        // card.addEventListener('click', clickCardHandle)
     })
 
     container.appendChild(fragment)
@@ -84,11 +75,14 @@ function searchPokemon(allPokemons){
     let timeOut;
     async function searchHandle(){
         clearTimeout(timeOut)
+        btn.style.display = 'none'
 
         timeOut = setTimeout(async () => {
             if (search_input.value === ''){
                 resetContainer()
                 loadPokemon(allPokemons, 1, currentIndex)
+                btn.style.display = 'inline-block'
+
                 return
             }
     
