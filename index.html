@@ -1,81 +1,13 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Scroll</title>
-    <style>
-        body {
-            display: flex;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .sidebar {
-            width: 250px;
-            background: #333;
-            color: white;
-            padding: 20px;
-            position: relative;
-        }
-        .sidebar h2 {
-            margin: 0;
-            padding: 10px;
-            background: #444;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-        .sidebar .content {
-            padding-top: 50px;
-        }
-        .main-content {
-            flex: 1;
-            padding: 20px;
-        }
-        .spacer {
-            height: 1200px; /* Tạo nội dung dài để cuộn */
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-
-    <div class="sidebar">
-        <h2 id="sidebar-title">Sidebar</h2>
-        <div class="content">
-            <p>Nội dung sidebar...</p>
-            <p>Thêm nội dung để kéo dài sidebar.</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <h1>Nội dung chính</h1>
-        <p>Cuộn xuống để xem hiệu ứng của tiêu đề sidebar.</p>
-        <div class="spacer"></div>
-    </div>
-
-    <script>
-        const title = document.getElementById("sidebar-title");
-        const sidebar = document.querySelector(".sidebar");
-        
-        window.addEventListener("scroll", () => {
-            const sidebarRect = sidebar.getBoundingClientRect();
-            const sidebarTop = sidebarRect.top;
-            const sidebarBottom = sidebarRect.bottom;
-            
-            if (sidebarTop <= 0 && sidebarBottom > window.innerHeight) {
-                title.style.position = "fixed";
-                title.style.top = "0";
-            } else if (sidebarBottom <= window.innerHeight) {
-                title.style.position = "absolute";
-                title.style.top = "auto";
-                title.style.bottom = "0";
-            } else {
-                title.style.position = "absolute";
-                title.style.top = "0";
-            }
-        });
-    </script>
-
+    <a href="https://chiennguyencoder.github.io/SGroup_Project/LandingPage/">LandingPage</a>
+    <br>
+    <a href="https://chiennguyencoder.github.io/SGroup_Project/Pokemon/">Pokemon</a>
 </body>
 </html>
