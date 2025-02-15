@@ -137,6 +137,7 @@ function animateOnScroll(){
         if (rect.top >= 0 && rect.top <= window.innerHeight / 1.25){            // console.log(animate);
             animate.classList.add('show')
         }
+        
     })
 }
 
